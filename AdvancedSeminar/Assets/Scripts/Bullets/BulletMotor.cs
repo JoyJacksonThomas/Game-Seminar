@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletMotor : MonoBehaviour {
+   
+   public bool mIsActive = false;
 
    public BulletData mBulletData;
 
@@ -20,10 +22,10 @@ public class BulletMotor : MonoBehaviour {
    void Start()
    {
       mRigidbody2D = GetComponent<Rigidbody2D>();
-      GetComponent<SpriteRenderer>().color = mBulletData.color;
       mTarget = GameObject.Find(mTargetID);
 
-      if(mBulletData.fireType == BulletData.FireType.SEEK_PERFECT)
+      GetComponent<SpriteRenderer>().color = mBulletData.color;
+      if (mBulletData.fireType == BulletData.FireType.SEEK_PERFECT)
       {
          mRigidbody2D.AddForce(transform.up * mBulletData.startForce);
       }
@@ -50,7 +52,7 @@ public class BulletMotor : MonoBehaviour {
    {
       if(mBulletData.fireType == BulletData.FireType.STRAIGHT)
       {
-         transform.Translate(transform.up * mBulletData.speed * Time.deltaTime);
+         transform.Translate(transform.up * mBulletData.speed * Time.deltaTime, Space.World);
       }
    }
 
@@ -58,39 +60,42 @@ public class BulletMotor : MonoBehaviour {
    {
       if (mBulletData.fireType == BulletData.FireType.SEEK_PERFECT)
       {
-         Debug.Log("seeking");
-         Vector2 diff = (Vector2)mTarget.transform.position - (Vector2)transform.position;
-         if (Mathf.Abs(diff.magnitude) <= mTargetRadius)
+         if(mTarget != null)
          {
-            Debug.Log("targethit");
-            mRigidbody2D.velocity = Vector2.zero;
-            return;
+            Vector2 diff = (Vector2)mTarget.transform.position - (Vector2)transform.position;
+            if (Mathf.Abs(diff.magnitude) <= mTargetRadius)
+            {
+               Debug.Log("targethit");
+               mRigidbody2D.velocity = Vector2.zero;
+               return;
+            }
+
+            float targetSpeed = 0;
+            if (diff.magnitude > mSlowRadius)
+            {
+               targetSpeed = mBulletData.speed;
+            }
+            else
+            {
+               targetSpeed = mBulletData.speed * diff.magnitude / mTimeToTarget;
+            }
+
+            Vector2 targetVelocity = diff;
+            targetVelocity.Normalize();
+            targetVelocity *= targetSpeed;
+
+            Vector2 acceleration = targetVelocity - mRigidbody2D.velocity;
+            acceleration /= mTimeToTarget;
+
+            if (acceleration.magnitude > mMaxAcceleration)
+            {
+               acceleration.Normalize();
+               acceleration *= mMaxAcceleration;
+            }
+
+            mRigidbody2D.AddForce(acceleration);
          }
-
-         float targetSpeed = 0;
-         if (diff.magnitude > mSlowRadius)
-         {
-            targetSpeed = mBulletData.speed;
-         }
-         else
-         {
-            targetSpeed = mBulletData.speed * diff.magnitude / mTimeToTarget;
-         }
-
-         Vector2 targetVelocity = diff;
-         targetVelocity.Normalize();
-         targetVelocity *= targetSpeed;
-
-         Vector2 acceleration = targetVelocity - mRigidbody2D.velocity;
-         acceleration /= mTimeToTarget;
-
-         if (acceleration.magnitude > mMaxAcceleration)
-         {
-            acceleration.Normalize();
-            acceleration *= mMaxAcceleration;
-         }
-
-         mRigidbody2D.AddForce(acceleration);
+         
          
          return;
       }
@@ -105,16 +110,32 @@ public class BulletMotor : MonoBehaviour {
 
       if(col.gameObject.name == mTargetID)
       {
-         if(mTargetID == "Boss")
+         
+         if(mTargetID == "Player")
          {
-            mTarget.GetComponent<BossHealth>().damage(mBulletData.damage);
+            if(GameObject.Find("Player").GetComponent<PlayerMotor>().parrying)
+            {
+               transform.rotation = Quaternion.Euler(0,0,transform.rotation.eulerAngles.z + 180f);
+               mTargetID = "Boss";
+               mTarget = GameObject.Find(mTargetID);
+            }
+            //else if (GameObject.Find("Player").GetComponent<Health>().mInvincible)
+            //{
+            //   
+            //}
+            else
+            {
+               mTarget.GetComponent<Health>().damage(mBulletData.damage);
+               Destroy(gameObject);
+            }
          }
-         if (mTargetID == "Player")
+         else
          {
-            mTarget.GetComponent<Player>().damage(mBulletData.damage);
+            mTarget.GetComponent<Health>().damage(mBulletData.damage);
+            Destroy(gameObject);
          }
-         Destroy(gameObject);
       }
    }
 
+   
 }

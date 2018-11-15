@@ -9,12 +9,17 @@ public class BulletData : ScriptableObject{
       STRAIGHT,
       SEEK_PERFECT
    };
+   public enum EffectType
+   {
+      NO_EFFECT,
+      POISON_EFFECT
+   };
    public int damage;
-   public float life;
    public float speed;
    public float startForce;
+   public float life;
    public FireType fireType;
-   public float fireRate;
+   public EffectType effectType;
    public Sprite sprite;
    public Color color;
    public float scale;

@@ -11,15 +11,130 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191fd562189dce4bb0582f8e483df50, type: 3}
   m_Name: Gun2
   m_EditorClassIdentifier: 
-  bullets:
-  - {fileID: 11400000, guid: cb6ecbc6743827846b9569320c045f27, type: 2}
-  - {fileID: 11400000, guid: cb6ecbc6743827846b9569320c045f27, type: 2}
-  - {fileID: 11400000, guid: cb6ecbc6743827846b9569320c045f27, type: 2}
-  bulletSpawnOffSets:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  bulletRotationOffSets:
-  - 0
-  - 90
-  - -90
+  data:
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 0
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 20
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 40
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 60
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 80
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 100
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 120
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 140
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 160
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 180
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 200
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 220
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 240
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 260
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 280
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 300
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 320
+  - bullet: {fileID: 11400000, guid: 1e8f385505eef2643936db878759c0d4, type: 2}
+    fireRate: 7
+    burstFireData: {x: 20, y: 40}
+    bulletSpawnDelay: 0
+    bulletSpawnOffSet: {x: 0, y: 0}
+    spawnAddative: 1
+    bulletRotationOffSet: 340

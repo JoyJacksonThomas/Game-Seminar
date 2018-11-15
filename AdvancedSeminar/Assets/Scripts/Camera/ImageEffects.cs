@@ -9,6 +9,7 @@ public class ImageEffects : MonoBehaviour {
 
    private void OnRenderImage(RenderTexture source, RenderTexture destination)
    {
+      //[] pixels = new Color[];
       Graphics.Blit(source, destination, mEffectMaterial);
    }
 }
