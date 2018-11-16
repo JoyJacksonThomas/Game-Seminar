@@ -2016,11 +2016,6 @@ Prefab:
       propertyPath: mHealthBar
       value: 
       objectReference: {fileID: 467819609}
-    - target: {fileID: 114149536508318018, guid: 7a3592c0096a71c41aea82e5eaf90cc2,
-        type: 2}
-      propertyPath: mStartHealth
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3592c0096a71c41aea82e5eaf90cc2, type: 2}
   m_IsPrefabAsset: 0

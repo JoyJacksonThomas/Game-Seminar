@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/student/Downloads/AdvancedSeminar/AdvancedSeminar/AdvancedSeminar.exe
+C:/Users/student/Documents/GitHub/Game-Seminar/AdvancedSeminar/BuildVersions/AdvancedSeminar.exe
 SceneListBegin?
 Assets/Scenes/MenuScene.unity
 Assets/Scenes/BulletHell.unity
